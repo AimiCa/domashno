@@ -1,0 +1,46 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+    int n;
+    int counter = 0;
+    cin>>n;
+    int A[n];
+    for(int i=0;i<n;i++)cin>>A[i];
+    int m;
+    cin>>m;
+    int B[m];
+    for(int j=0; j<m; j++)cin>>B[j];
+    bool meh = true;
+    for(int i=0;i<n;i++){
+            if(meh==false){
+        break;}
+        counter=0;
+        for(int j=0;j<m;j++){
+            if(A[i]==B[j]) counter++;
+        }
+        if(counter>0)meh;
+        if(counter==0) meh=false;
+        if(meh==false) break;
+    }
+    for(int j=0;j<m;j++){
+        if(meh==false){
+            break;}
+        counter=0;
+        for(int i=0; i<n;i++){
+            if(B[j]==A[i]) counter++;
+        }
+        if(counter>0)meh;
+        if(counter==0) meh=false;
+        if(meh==false)break;
+    }
+
+
+if (meh) cout<<"Yes"<<endl;
+if (meh==false) cout<<"No"<<endl;
+
+    return 0;
+}
