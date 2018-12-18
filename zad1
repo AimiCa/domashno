@@ -1,0 +1,33 @@
+#include "pch.h"
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int a;
+	int b;
+	cin >> a;
+	cin >> b;
+	int sum;
+	int c;
+   if (a >= 0 && b <= 1024) {
+
+	for (int i = a; i <= b; i++) {
+		bool prime = true;
+
+		for (int j = 2; j < i; j++) {
+			if (i%j == 0)prime = false;
+		}
+		c = i;
+		sum=0;
+		while (c != 0) {
+			sum +=c%10;
+			c = c / 10;
+		}
+		for (int k = 2; k < sum; k++) {
+			if (sum%k == 0)prime = false;
+		}
+		if (prime)cout << i << " ";
+	}
+}
+	}
