@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+int (main){
+int n;
+cin>>n;
+int arr[n];
+bool period;
+int counter;
+for(int i=0;i<n;i++){
+    cin>>arr[i];
+}
+for(int i=1;i<=n;i++){
+    if(n%i==0 && n!=i){
+        period = true;
+        for(int j=0;j<n;j++){
+            if(arr*(arr+j)!=*(arr+j+1)){
+                period = false;
+            }
+            if(period=false){break;}
+            if(period==true && j==n+1){
+                counter=i;
+            }
+            if(period==true){
+                break;
+            }
+        }
+        if(period==true){break;}
+    }
+    if(period==false)cout<<"Not a Period"<<endl;
+    if(period){
+        for(int k=0;k<counter;k++)cout<<*(arr+k);
+    }
+}
+return 0;
+}
